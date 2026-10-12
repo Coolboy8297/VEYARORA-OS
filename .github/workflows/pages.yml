@@ -28,7 +28,7 @@ jobs:
           python3 - <<'PY'
           import re
           source = open("index.html", encoding="utf-8").read()
-          scripts = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', source, re.S | re.I)
+          scripts = re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>', source, re.S | re.I)
           if not scripts:
               raise SystemExit("No inline browser JavaScript found in index.html")
           open("/tmp/ai-tracking-check.js", "w", encoding="utf-8").write(scripts[-1])
